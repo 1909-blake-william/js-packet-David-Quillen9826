@@ -180,6 +180,13 @@ function printShape(shape, height, character) {
             console.log(result);
             break;
         case "Diamond":
+            for (let i = 0; i < height; i++) {
+                for (let k = 0; k <= i; j++) {
+                    result = result + character;
+                }
+                result = result + '\n'
+            }
+            console.log(result);
             break;
     }
 }
@@ -188,6 +195,56 @@ function printShape(shape, height, character) {
 // Define function traverseObject(someObj)
 // Print every property and it's value.
 
-function traverseObject(someObj){
-    
+function traverseObject(someObj) {
+    let txt = '';
+    for (x in someObj) {
+        txt += x + '  :  ' + someObj[x] + '\n';
+      }
+    console.log(txt);
+}
+
+// 10. Delete Element
+// Define function deleteElement(someArr)
+// Print length
+// Delete the third element in the array.
+// Print length
+// The lengths should be the same.
+
+function deleteElement(someArr) {
+    console.log(someArr.length);
+    delete someArr[2];
+    console.log(someArr.length);
+}
+
+// 11. Splice Element
+// Define function spliceElement(someArr)
+// Print length
+// Splice the third element in the array.
+// Print length
+// The lengths should be one less than the original length.
+
+function spliceElement(someArr) {
+    console.log(someArr.length);
+    someArr.splice(2, 1);
+    console.log(someArr.length);
+}
+
+// 12. Defining an object using a constructor
+// Define a function Person(name, age)
+// The following line should set a Person object to the variable john:
+// 	let john = new Person("John", 30);
+
+function Person(name, age) {
+    this.personName = name;
+    this.personAge = age;
+}
+
+// 13. Defining an object using an object literal
+// Define function getPerson(name, age)
+// The following line should set a Person object to the variable john:
+// 	let john = getPerson("John", 30);
+
+function getPerson(name, age) {
+    let person = { personName: name, personAge: age }
+    return person;
 }
