@@ -70,9 +70,11 @@ function reverseStr(someStr) {
 // Use recursion to compute and return the factorial of someNum.
 
 function factorial(someNum) {
-    let result = 1;
-    for (i = 1; i <= someNum; i++) {
-        result = 1 * result * i;
+    let result;
+    if(someNum === 0){
+        result = 1;
+    } else {
+        result = factorial(someNum-1) * someNum;
     }
     return result;
 }
