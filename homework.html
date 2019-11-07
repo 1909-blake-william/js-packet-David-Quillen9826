@@ -144,7 +144,7 @@
     // Print the value of the attribute.
     // Print the element that has the attribute.
     function getCustomAttribute() {
-      document.querySelectorAll('[data-customAttr]').forEach(ele => {console.log(ele)});
+      document.querySelectorAll('[data-customAttr]').forEach(ele => { console.log(ele) });
     }
 
     // 6. Sum Event
@@ -155,8 +155,20 @@
     // Define onchange event handler.
     // Add <input> element values.
     // Put the sum in the <span> element.
-    // If values cannot be added, put "Cannot add" in the <span> element
-    //  function
+    // If values cannot be added, put "Cannot add" in the <span> element      
+    document.getElementById("num1").addEventListener("change", adder);
+    document.getElementById("num2").addEventListener("change", adder);
+    function adder() {
+      let add1 = Number(document.getElementById("num1").value);
+      let add2 = Number(document.getElementById("num2").value);
+      let result = '';
+      if(isNaN(add1)||isNaN(add2)){
+        result = "Cannot add";
+      }else {
+        result = add1 + add2;
+      }
+      document.getElementById("sum").innerHTML = result;
+    }
 
     // 7. Skills Event
     // When user selects a skill, create an alert with a message similar to:
